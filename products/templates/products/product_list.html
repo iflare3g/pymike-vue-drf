@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Lista Prodotti</title>
+    </head>
+    <body>
+        {% for object in object_list %}
+        <p>Prodotto: {{ object.name}}</p>
+        <p>Descrizione: {{ object.description}}</p>
+        <p>Produttore: {{ object.manufacturer}}</p>
+        {% endfor %}
+    </body>
+</html>

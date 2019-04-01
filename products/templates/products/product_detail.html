@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ object.name }}</title>
+    </head>
+    <body>
+        <p>Prodotto: {{ object.name }}</p>
+        <p>Descrizione: {{ object.description }}</p>
+        <p>Prezzo: {{ object.price }}</p>
+        <p>Costo di spedizione: {{ object.shipping_price}} Euro</p>
+        <p>Quantità: {{ object.quantity}}</p>
+        <img src="{{ object.photo.url }}" alt="product">
+
+
+    </body>
+</html>
