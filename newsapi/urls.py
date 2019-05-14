@@ -1,8 +1,12 @@
 from django.urls import path
-from .views import article_list, article_drafted_list, article_detail_view
+from .views import ArticleListViewAPIView, ArticleDraftListAPIView, ArticleDetailAPIView
 
 urlpatterns = [
-    path("articles/", article_list, name="article-list"),
-    path("articles/drafts/", article_drafted_list, name="article-drafted-list"),
-    path("articles/<int:pk>/", article_detail_view, name="article-detail"),
+    path("articles/", ArticleListViewAPIView.as_view(), name="article-list"),
+    path(
+        "articles/drafts/",
+        ArticleDraftListAPIView.as_view(),
+        name="article-drafted-list",
+    ),
+    path("articles/<int:pk>/", ArticleDetailAPIView.as_view(), name="article-detail"),
 ]
