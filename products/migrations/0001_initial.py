@@ -8,30 +8,55 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Manufacturer',
+            name="Manufacturer",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=120)),
-                ('location', models.CharField(max_length=120)),
-                ('active', models.BooleanField(default=True)),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=120)),
+                ("location", models.CharField(max_length=120)),
+                ("active", models.BooleanField(default=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Product',
+            name="Product",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=120)),
-                ('description', models.CharField(blank=True, max_length=300, null=True)),
-                ('photo', models.ImageField(blank=True, null=True, upload_to='')),
-                ('price', models.FloatField()),
-                ('shipping_price', models.FloatField()),
-                ('quantity', models.PositiveSmallIntegerField()),
-                ('manufacturer', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='products', to='products.Manufacturer')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=120)),
+                (
+                    "description",
+                    models.CharField(blank=True, max_length=300, null=True),
+                ),
+                ("photo", models.ImageField(blank=True, null=True, upload_to="")),
+                ("price", models.FloatField()),
+                ("shipping_price", models.FloatField()),
+                ("quantity", models.PositiveSmallIntegerField()),
+                (
+                    "manufacturer",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="products",
+                        to="products.Manufacturer",
+                    ),
+                ),
             ],
         ),
     ]
